@@ -10,6 +10,7 @@ export default function Products() {
     }
 
     console.log("draw products")
+    
     return (
         <div className="products container p-1">
             {ProductsContext.products.map(product => {

@@ -44,7 +44,7 @@ const initialState = [
         active: true,
     },
     {
-        id: 5,
+        id: 6,
         title: "Кофта",
         price: 350,
         image: "https://storage.vsemayki.ru/images/0/1/1320/1320952/previews/people_12_hoodie_front_white_500.jpg",
@@ -59,7 +59,9 @@ export const ProductsContext = (props) => {
 
     const setActive = (productId, value) => {
         setProducts(Prev=>{
-            return Prev[productId].active = value;
+            const NewState = [...Prev]
+            NewState[productId].active = value
+            return NewState
         })
     }
 
