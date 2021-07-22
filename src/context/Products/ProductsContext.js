@@ -1,5 +1,4 @@
 import {React, useState, createContext} from 'react'
-import { Prev } from 'react-bootstrap/esm/PageItem';
 
 const initialState = [
     {
