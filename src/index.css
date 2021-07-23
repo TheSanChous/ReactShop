@@ -15,16 +15,16 @@ code {
     monospace;
 }
 
-.navbar-links{
+.navbar-links {
    justify-content: flex-end;
 }
 
-.card{
+.card {
   width: 10rem;
   margin: 1rem;
 }
 
-.products{
+.products {
   display: flex;
   flex-wrap: wrap;
 }

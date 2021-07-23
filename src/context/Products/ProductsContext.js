@@ -52,7 +52,7 @@ const initialState = [
     }
 ]
 
-const Context = createContext();
+export const Context = createContext();
 
 export const ProductsContext = (props) => {
     const [products, setProducts] = useState(initialState)
@@ -71,6 +71,3 @@ export const ProductsContext = (props) => {
         </Context.Provider>
     )
 }
-
-
-export default Context;

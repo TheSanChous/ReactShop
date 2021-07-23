@@ -4,7 +4,7 @@ import Products from '../Products/Products'
 export default function Shop() {
     return (
         <div>
-            <Products></Products>
+            <Products/>
         </div>
     )
 }

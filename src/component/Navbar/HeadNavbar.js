@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { Context } from '../../context/Basket/BasketContext'
 
 export default function HeadNavbar() {
+
+    const basketLength = useContext(Context).basket.length
+
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow">
             <div class="container-fluid">
@@ -13,7 +17,7 @@ export default function HeadNavbar() {
                 </div>
                 <div class="navbar-links collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <Link class="nav-link" to="/basket">Basket</Link>
+                        <Link class="nav-link" to="/basket">Basket {basketLength > 0 ? ` - ${basketLength}`: "" } </Link>
                         <Link class="nav-link" to="/about">About</Link>
                     </div>
                 </div>
