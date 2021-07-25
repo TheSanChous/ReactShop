@@ -14,33 +14,46 @@ export default function Basket() {
         BasketContext.setCount(productId, e.target.value);
     }
     
+    function calculateBasketSum() {
+        let sum = 0;
+        BasketContext.basket.forEach(product => {
+            sum += product.price * product.count;
+        });
+        return sum;
+    }
+
     if (!BasketContext.basket || BasketContext.basket.length == 0) {
         return (
             <div className="p-5 text-center text-muted">
-                <h3>Basket is empty</h3>
+                <h3>Корзина пуста.</h3>
             </div>
         )
     }
 
     return (
-        <div className="products container p-1">
-            {BasketContext.basket.map(product => {
-                return (
-                    <div className="card">
-                        <img className="card-img-top" src={product.image} alt="Image"></img>
-                        <div className="card-body" id={product.id}>
-                            <h5 className="card-title">{product.title}</h5>
-                            <p className="card-text">{product.price} грн.</p>
-                            <div className="input-group">
-                                <input type="number" value={product.count} onChange={(e) => onCountChange(e)} min="1" class="form-control" placeholder="Количество" aria-describedby="addon-wrapping"></input>
-                                <span className="input-group-text">шт.</span>
+        <>
+            <div className="products container p-5">
+                {BasketContext.basket.map(product => {
+                    return (
+                        <div className="card">
+                            <img className="card-img-top" src={product.image} alt="Image"></img>
+                            <div className="card-body" id={product.id}>
+                                <h5 className="card-title">{product.title}</h5>
+                                <p className="card-text">{product.price} грн.</p>
+                                <div className="input-group">
+                                    <input type="number" value={product.count} onChange={(e) => onCountChange(e)} min="1" class="form-control" placeholder="Количество" aria-describedby="addon-wrapping"></input>
+                                    <span className="input-group-text">шт.</span>
+                                </div>
+                                <p></p>
+                                <button className="btn btn-secondary" onClick={(e) => onClickRemove(e)}>Убрать</button>
                             </div>
-                            <p></p>
-                            <button className="btn btn-warning" onClick={(e) => onClickRemove(e)}>Убрать</button>
                         </div>
-                    </div>
-                )
-            })}
-        </div>
+                    )
+                })}
+            </div>
+            <div className="m-1 fixed-bottom badge badge-secondary">
+                <h5>Сумма: {calculateBasketSum()}</h5>
+            </div>
+        </>
     )
 }

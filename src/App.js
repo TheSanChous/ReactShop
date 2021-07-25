@@ -7,10 +7,11 @@ import { BasketContext } from './context/Basket/BasketContext';
 import HeadNavbar from './component/Navbar/HeadNavbar';
 import Shop from './component/Shop/Shop';
 import Basket from './component/Basket/Basket';
+import About from './component/AboutPage/About';
 
 function App() {
   return (
-    <div className="container h-100 d-inline-block shadow-sm mw-100 p-1">
+    <div className="container shadow-sm p-1">
       <Router>
         <ProductsContext>
           <BasketContext>
@@ -23,6 +24,7 @@ function App() {
                 <Basket/>
               </Route>
               <Route path="/about" exact>
+                <About/>
               </Route>
             </Switch>
           </BasketContext>

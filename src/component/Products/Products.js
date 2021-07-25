@@ -7,7 +7,7 @@ export default function Products() {
     const ProductsContext = useContext(ContextProducts);
 
     return (
-        <div className="products container p-1">
+        <div className="products container p-5">
             {
                 ProductsContext.products.map(p => {
                     return <Product product={p}></Product>
