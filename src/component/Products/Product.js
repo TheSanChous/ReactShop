@@ -1,6 +1,7 @@
 import {React, useContext} from 'react'
 import { Context as ContextBasket } from '../../context/Basket/BasketContext'
 import { Context as ContextProducts } from '../../context/Products/ProductsContext'
+import { Link } from 'react-router-dom'
 
 export default function Product(props) {
 
@@ -21,7 +22,9 @@ export default function Product(props) {
 
     return (
         <div className="card">
-            <img className="card-img-top" src={product.image} alt="Image"></img>
+            <Link to={`/product?id=${product.id}`}>
+                <img className="card-img-top" src={product.image} alt="Image"></img>
+            </Link>
             <div className="card-body" id={product.id}>
                 <h5 className="card-title">{product.title}</h5>
                 <p className="card-text">{product.price} грн.</p>    

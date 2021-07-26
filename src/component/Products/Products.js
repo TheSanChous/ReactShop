@@ -1,5 +1,6 @@
 import {React, useContext} from 'react'
 import { Context as ContextProducts} from '../../context/Products/ProductsContext';
+
 import Product from './Product';
 
 export default function Products() {
@@ -10,7 +11,9 @@ export default function Products() {
         <div className="products container p-5">
             {
                 ProductsContext.products.map(p => {
-                    return <Product product={p}></Product>
+                    return (
+                        <Product product={p}></Product>
+                    )
                 })
             }
         </div>

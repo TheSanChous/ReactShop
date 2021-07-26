@@ -15,6 +15,15 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  color: rgba(0,0,0,.5);
+}
+a:hover {
+  text-decoration: none; 
+  color: rgba(0,0,0,.7);
+}
+
 .navbar-links {
    justify-content: flex-end;
 }
@@ -27,4 +36,8 @@ code {
 .products {
   display: flex;
   flex-wrap: wrap;
+}
+
+.product-max {
+  max-width: 540px;
 }

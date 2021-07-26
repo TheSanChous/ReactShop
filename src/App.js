@@ -8,8 +8,9 @@ import HeadNavbar from './component/Navbar/HeadNavbar';
 import Shop from './component/Shop/Shop';
 import Basket from './component/Basket/Basket';
 import About from './component/AboutPage/About';
+import ProductPage from './component/Products/ProductPage';
 
-function App() {
+function App(props) {
   return (
     <div className="container shadow-sm p-1">
       <Router>
@@ -25,6 +26,9 @@ function App() {
               </Route>
               <Route path="/about" exact>
                 <About/>
+              </Route>
+              <Route path="/product">
+                <ProductPage/>
               </Route>
             </Switch>
           </BasketContext>
